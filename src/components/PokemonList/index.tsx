@@ -8,8 +8,8 @@ interface PokemonList {
 const PokemonListComponent: React.FC<PokemonList> = ({pokemonList}) => {
     return pokemonList.map((item, index) => {
         const pokeID = item.url.split("/")
-        return <div>
-            <h1 key={index}>Nome: {item.name}</h1>
+        return <div key={index}>
+            <h1>Nome: {item.name}</h1>
             <Link to={`/pokemon/${pokeID[pokeID.length -2]}`}>{item.url}</Link>
         </div>
     })
